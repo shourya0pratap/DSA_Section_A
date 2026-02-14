@@ -1,7 +1,10 @@
-lis = [1,0,2,1,5]
+def swap_zeroes(lis):
+    i = 0
+    for j in range(len(lis)):
+        if lis[j] != 0:
+            lis[i] , lis[j] = lis[j] , lis[i]
+            i+=1
 
-for i in range(len(lis)//2):
-    if lis[i] == 0:
-        lis[i],lis[-i] = lis[-i],lis[i]
-
+lis = [0,1,2,3,0,4]
+swap_zeroes(lis)
 print(lis)
