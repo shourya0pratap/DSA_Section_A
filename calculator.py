@@ -9,24 +9,25 @@ def priority(x):
 def main():
     operators = []
     values = []
-    x = "2+1-2"
+    x = "3*2+8/2^3"
+    print(x)
     for i in x:
-        # print(values,operators)
+        print(f"{i}\t\t{operators}\t\t{values}")
         if i.isnumeric():
-            values.append(i)
+            values.append(int(i))
         elif len(operators) == 0:
             operators.append(i)
         else:
             top = operators[-1]
-            if priority(top) < priority(i): # type: ignore
+            if priority(top) < priority(i): #type: ignore
                 operators.append(i)
             else:   
                 operators.pop()
-                b = int(values.pop())
-                a = int(values.pop())
+                b = values.pop()
+                a = values.pop()
                 result = 0
                 if top == "^":
-                    result = a^b
+                    result = a**b
                 elif top == "*":
                     result = a*b
                 elif top == "/":
@@ -37,13 +38,15 @@ def main():
                     result = a-b
                 values.append(result)
                 operators.append(i)
+        
     while len(operators) > 0:
+        print(f"{operators}\t\t{values}")
         top = operators.pop()
-        b = int(values.pop())
-        a = int(values.pop())
+        b = values.pop()
+        a = values.pop()
         result = 0
         if top == "^":
-            result = a^b
+            result = a**b
         elif top == "*":
             result = a*b
         elif top == "/":
@@ -54,5 +57,6 @@ def main():
             result = a-b
         values.append(result)
     print(values.pop())
-    
-main()
+
+if __name__ == "__main__":
+    main()
