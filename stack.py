@@ -6,10 +6,10 @@ class StackADT:
         self.stk.append(elem)
 
     def pop(self):
-        return None if self.is_empty() else self.stk.pop()
+        return "Underflow" if self.is_empty() else self.stk.pop()
 
     def peek(self):
-        return None if self.is_empty() else self.stk[-1]
+        return "Underflow" if self.is_empty() else self.stk[-1]
 
     def is_empty(self)->bool:
         return len(self.stk) == 0

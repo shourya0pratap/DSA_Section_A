@@ -4,6 +4,15 @@ class Node:
         self.val = val
 
 class LinkedList:
+    
+    def __len__(self):
+        n = 0
+        curr = self.head
+        while curr is not None:
+            n += 1
+            curr = curr.next
+        return n
+
     def __init__(self):
         self.head = None
         
@@ -36,21 +45,23 @@ class LinkedList:
             i += 1
         return curr.val
 
-    def disp(self):
+    def __str__(self):
         elements = []
         curr = self.head
         while curr:
             elements.append(str(curr.val))
             curr = curr.next
-        print("[" + ", ".join(elements) + "]")
+        return "[" + ", ".join(elements) + "]"
 
 def main():
     lis = LinkedList()
+    print(lis)
     for i in range(1,6):
         lis.add(i)
-    lis.disp()
+    print(lis)
     lis.remove(0)
-    lis.disp()
+    print(lis)
+    print(len(lis))
     
 if __name__ == "__main__":
     main()
