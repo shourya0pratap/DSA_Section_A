@@ -1,20 +1,24 @@
-# Trees
+# Notes
 
-## Binary Trees
+## Trees
+A non linear hierarchical data structure consisting of Nodes connected by Edges
 
-## Binary Search Trees
+### Binary Trees
 
-## AVL Trees
+### Binary Search Trees
 
-## RB Trees
+### AVL Trees
+
+### RB Trees
 
 ---
 
-# Hashing
-The process of converting a raw input of arbitrary length to a scrambled string of fixed size
+## Hashing
+It refers to the process of converting a raw input of arbitrary length to a scrambled string of fixed size
+
 ---
 
-# Graphs
+## Graphs
 A non linear data structure consisting of Vertices connected by Edges
 
 ## DFS
